@@ -3,8 +3,9 @@ import sys
 
 import chess
 
-class ChessBot:
-    name: str = "ChessBot"
+
+class RandomMoveBot:
+    name: str = "RandomMoveBot"
     author: str = "Indivicivet"
 
     def __init__(self):
@@ -44,7 +45,8 @@ class ChessBot:
         elif cmd in ["exit", "quit"]:
             exit()
 
+
 if __name__ == "__main__":
-    game = ChessBot()
+    game = RandomMoveBot()
     while True:
         game.process_command(input())
