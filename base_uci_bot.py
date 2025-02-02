@@ -1,5 +1,10 @@
+"""
+create a subclass of BaseUCIBot and implement .select_move()
+using .board
+"""
+
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 
 import chess
@@ -9,9 +14,7 @@ import chess
 class BaseUCIBot:
     name: Optional[str] = None
     author: Optional[str] = None
-
-    def __init__(self):
-        self.board = chess.Board()
+    board: chess.Board = field(default_factory=chess.Board)
 
     def select_move(self):
         raise NotImplementedError
